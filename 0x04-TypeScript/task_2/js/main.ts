@@ -71,7 +71,7 @@ export function executeWork(employee: Director | Teacher): string {
 // String literal type for subjects
 export type Subjects = 'Math' | 'History';
 
-// teachClass function
+// teachClass function with parameter typed exactly as "todayClass: Subjects"
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
@@ -81,5 +81,10 @@ export function teachClass(todayClass: Subjects): string {
 
 // Example usage
 console.log(executeWork(createEmployee(200)));   // Getting to work
-console.log(teachClass('Math'));                 // Teaching Math
-console.log(teachClass('History'));              // Teaching History
+// Example usage
+console.log(teachClass('Math'));     // Teaching Math
+console.log(teachClass('History'));  // Teaching History
+
+
+
+
