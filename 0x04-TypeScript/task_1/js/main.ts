@@ -1,10 +1,11 @@
 // Define the Teacher interface
 interface Teacher {
-  firstName: string;
-  lastName: string;
+  readonly firstName: string;
+  readonly lastName: string;
   fullTimeEmployee: boolean;
   location: string;
   yearsOfExperience?: number; // optional property
+  [key: string]: any;
 }
 
 // Define the Director interface extending Teacher
