@@ -71,13 +71,22 @@ export function executeWork(employee: Director | Teacher): string {
 // String literal type for subjects
 export type Subjects = 'Math' | 'History';
 
-// teachClass function with parameter typed exactly as "todayClass: Subjects"
+// Properly defined function with parameter typed as todayClass: Subjects
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  } else {
+    // This branch is optional, just for type safety
+    return 'Unknown subject';
   }
-  return 'Teaching History';
 }
+
+// Example usage
+teachClass('Math')
+teachClass('History')     // Output: Teaching Math
+// Output: Teaching History
 
 // Example usage
 console.log(executeWork(createEmployee(200)));   // Getting to work
