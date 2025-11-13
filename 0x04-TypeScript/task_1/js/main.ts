@@ -7,13 +7,13 @@ interface Teacher {
   yearsOfExperience?: number; // optional property
 }
 
-// Extend Teacher to create the Directors interface
-interface Directors extends Teacher {
+// Define the Director interface extending Teacher
+interface Director extends Teacher {
   numberOfReports: number;
 }
 
 // Example usage
-const director1: Directors = {
+const director1: Director = {
   firstName: 'John',
   lastName: 'Doe',
   location: 'London',
