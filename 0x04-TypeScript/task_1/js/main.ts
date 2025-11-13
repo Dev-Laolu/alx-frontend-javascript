@@ -28,10 +28,15 @@ console.log(director1);
 
 
 
-function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName} ${lastName}`;
+// Interface for the function
+interface printTeacherFunction {
+  (teacher: { firstName: string; lastName: string }): string;
 }
 
-printTeacher("Hopewell", "Olayinka");
-console.log(printTeacher); 
+// Function implementation
+const printTeacher: printTeacherFunction = ({ firstName, lastName }) => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
 
+// Example usage
+console.log(printTeacher({ firstName: "Hopewell", lastName: "Olayinka" })); 
