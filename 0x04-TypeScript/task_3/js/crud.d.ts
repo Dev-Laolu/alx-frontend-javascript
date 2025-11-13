@@ -1,5 +1,3 @@
-// task_3/js/crud.d.ts
-
 /// <reference path="./interface.ts" />
 
 import { RowID, RowElement } from './interface';
