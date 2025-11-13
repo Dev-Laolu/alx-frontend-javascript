@@ -40,7 +40,7 @@ export class Teacher implements TeacherInterface {
   }
 }
 
-// createEmployee with explicit "if (salary < 500)" check
+// createEmployee function with explicit "if (salary < 500)" check
 export function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === 'number') {
     if (salary < 500) {
@@ -68,10 +68,10 @@ export function executeWork(employee: Director | Teacher): string {
   }
 }
 
-// Type for subjects
+// String literal type for subjects
 export type Subjects = 'Math' | 'History';
 
-// teachClass function with explicit parameter type todayClass: Subjects
+// teachClass function
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
