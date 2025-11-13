@@ -42,10 +42,16 @@ export class Teacher implements TeacherInterface {
   }
 }
 
+// Updated createEmployee function with explicit salary < 500 check
 export function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === 'number' && salary < 500) {
-    return new Teacher();
+  if (typeof salary === 'number') {
+    if (salary < 500) {
+      return new Teacher();
+    } else {
+      return new Director();
+    }
   } else {
+    // If salary is a string, assume high salary -> Director
     return new Director();
   }
 }
