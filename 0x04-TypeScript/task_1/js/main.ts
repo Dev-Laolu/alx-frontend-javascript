@@ -35,7 +35,7 @@ interface printTeacherFunction {
 
 // Function declaration implementing the interface
 function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
-  return `${firstName[0]}. ${lastName}`;
+  return `${firstName} ${lastName}`;
 }
 
 // Example usage
