@@ -33,10 +33,10 @@ interface printTeacherFunction {
   (teacher: { firstName: string; lastName: string }): string;
 }
 
-// Function implementation
-const printTeacher: printTeacherFunction = ({ firstName, lastName }) => {
+// Function declaration implementing the interface
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-};
+}
 
 // Example usage
 console.log(printTeacher({ firstName: "Hopewell", lastName: "Olayinka" })); 
