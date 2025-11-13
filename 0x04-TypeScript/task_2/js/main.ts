@@ -1,5 +1,3 @@
-// Duplicate local declarations removed; use the exported interfaces/classes below.
-
 // task_2/js/main.ts
 
 export interface DirectorInterface {
@@ -42,7 +40,7 @@ export class Teacher implements TeacherInterface {
   }
 }
 
-// Updated createEmployee function with explicit salary < 500 check
+// createEmployee with explicit "if (salary < 500)" check
 export function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === 'number') {
     if (salary < 500) {
@@ -56,12 +54,12 @@ export function createEmployee(salary: number | string): Director | Teacher {
   }
 }
 
-// Exported type predicate function
+// Type predicate function
 export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
 
-// Exported function to execute work
+// Function to execute work
 export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
@@ -70,10 +68,10 @@ export function executeWork(employee: Director | Teacher): string {
   }
 }
 
-// Example usage
-console.log(executeWork(createEmployee(200)));   // Getting to work
+// Type for subjects
 export type Subjects = 'Math' | 'History';
 
+// teachClass function with explicit parameter type todayClass: Subjects
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
@@ -81,5 +79,7 @@ export function teachClass(todayClass: Subjects): string {
   return 'Teaching History';
 }
 
-console.log(teachClass('Math'));
-console.log(teachClass('History'));
+// Example usage
+console.log(executeWork(createEmployee(200)));   // Getting to work
+console.log(teachClass('Math'));                 // Teaching Math
+console.log(teachClass('History'));              // Teaching History
